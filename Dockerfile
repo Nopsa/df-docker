@@ -21,6 +21,7 @@ RUN pecl install mongodb && \
 RUN mkdir -p /usr/lib /usr/include
 ADD v8/usr/lib/libv8* /usr/lib/
 ADD v8/usr/include /usr/include/
+ADD ../converterScript.sh /usr/bin/
 ADD v8/usr/lib/php/20151012/v8js.so /usr/lib/php/20151012/v8js.so
 RUN echo "extension=v8js.so" > /etc/php/7.0/mods-available/v8js.ini && phpenmod v8js
 
